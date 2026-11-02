@@ -1,0 +1,29 @@
+[package]
+name = "jetson_jpeg"
+description = "Hardware JPEG encoding on NVIDIA Jetson through L4T's libnvjpeg and the NVJPG engine"
+version = "0.1.0"
+edition = "2024"
+authors = ["Team whIRLwind"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/IntelligentRoboticsLab/jetson_jpeg"
+readme = "README.md"
+keywords = ["jetson", "nvidia", "jpeg", "nvjpg", "l4t"]
+categories = ["hardware-support", "multimedia::encoding", "multimedia::images"]
+
+[dependencies]
+libc = "0.2"
+libloading = "0.8"
+thiserror = "2.0"
+tracing = "0.1"
+
+[dev-dependencies]
+anyhow = "1.0"
+
+[lints.clippy]
+# enable clippy lints with priority -1
+# so that we can override certain ones with "allow"
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+inline_always = "allow"
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
